@@ -32,6 +32,9 @@ while running:
         x -= 5
     if keystroke[pygame.K_RIGHT] and x < 800 - 60:
         x += 5
+    if keystroke[pygame.K_RETURN]:
+        x = 30
+        y = 20
 
     world.fill((255, 255, 255))
     color = (0, 128, 255)

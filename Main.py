@@ -6,8 +6,7 @@ import os
 import sys
 
 clock = pygame.time.Clock()
-x = 30
-y = 20
+
 
 # Initializing PyGame
 pygame.init()
@@ -20,8 +19,10 @@ pygame.display.set_icon(pygame.image.load('dungeon.png'))
 
 # Main Menu Function
 def Main_Menu():
+    x = 30
+    y = 20
     while True:
-        for event in event.get():
+        for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.QUIT()
                 sys.exit()
@@ -56,3 +57,5 @@ def Game():
 def Options():
     pass
 
+
+Main_Menu()

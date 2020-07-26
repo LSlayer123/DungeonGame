@@ -1,11 +1,6 @@
-import pickle
-import random
 import pygame
 from pygame.locals import *
-import os
 import sys
-
-clock = pygame.time.Clock()
 
 
 # Initializing PyGame
@@ -15,12 +10,23 @@ pygame.init()
 world = pygame.display.set_mode([1080, 720])
 pygame.display.set_caption("Game")
 pygame.display.set_icon(pygame.image.load('dungeon.png'))
+clock = pygame.time.Clock()
+x = 30
+y = 20
+
+
+# Function for redrawing world
+def Redraw_Screen():
+    world.fill((255, 255, 255))
+
+    pygame.draw.rect(world, (0, 128, 255), pygame.Rect(x, y, 60, 60))
+
+    pygame.display.update()
 
 
 # Main Menu Function
 def Main_Menu():
-    x = 30
-    y = 20
+    global x, y
     while True:
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -40,11 +46,7 @@ def Main_Menu():
             x = 30
             y = 20
 
-        world.fill((255, 255, 255))
-        color = (0, 128, 255)
-        pygame.draw.rect(world, color, pygame.Rect(x, y, 60, 60))
-
-        pygame.display.flip()
+        Redraw_Screen()
         clock.tick(60)
 
 
